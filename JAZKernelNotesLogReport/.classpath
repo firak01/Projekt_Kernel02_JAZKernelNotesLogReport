@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/JAZKernel"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/JAZKernelLogReport"/>
+	<classpathentry kind="lib" path="/ZKernelFileZJar/JAZKernelLogReport_fat.jar" sourcepath="/JAZKernelLogReport">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/1fgl/workspace/Eclipse3FGL/ZKernelDocumentation"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/ZKernelFileZJar/JAZKernelNotes_fat.jar" sourcepath="/JAZKernelNotes">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/1fgl/workspace/Eclipse3FGL/ZKernelDocumentation"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/JAZKernelNotes"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
