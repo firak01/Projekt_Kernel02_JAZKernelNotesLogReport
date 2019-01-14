@@ -2,7 +2,7 @@ package basic.zNotes.use.log4j;
 
 import lotus.domino.Database;
 import lotus.domino.NotesException;
-import basic.zKernel.KernelZZZ;
+import basic.zKernel.IKernelZZZ;
 import custom.zNotes.kernel.KernelNotesLogZZZ;
 import custom.zNotes.kernel.KernelNotesZZZ;
 import basic.zBasic.ExceptionZZZ;
@@ -12,8 +12,8 @@ import basic.zBasic.util.log.KernelReportContextProviderZZZ;
 import basic.zNotes.kernel.IKernelNotesZZZ;
 import basic.zNotes.kernel.NotesContextProviderZZZ;
 
-/**Klasse erweitert den KernelReportContextProviderZZZ um die Konfigurationen, die für das Schreiben in NotesDatenbanken notwendig sind.
- * Die für alle Notes-Contexte notwendigen Informationen werden aus dem NotesContextProvider geholt.
+/**Klasse erweitert den KernelReportContextProviderZZZ um die Konfigurationen, die fï¿½r das Schreiben in NotesDatenbanken notwendig sind.
+ * Die fï¿½r alle Notes-Contexte notwendigen Informationen werden aus dem NotesContextProvider geholt.
  * @author lindhaueradmin
  *
  */
@@ -21,12 +21,12 @@ public class NotesReportContextProviderZZZ extends KernelReportContextProviderZZ
 	private NotesContextProviderZZZ objContextNotes;
 	private KernelNotesZZZ objKernelNotes;
 	
-	private String sLog4jPathTemp=null; //Der Pfad der "cachenden" Log4j - Dateien. Wert für: //für "log4j.appender.NOTESLOGGER.File=@@FILENAMENOTES@@\n"
+	private String sLog4jPathTemp=null; //Der Pfad der "cachenden" Log4j - Dateien. Wert fï¿½r: //fï¿½r "log4j.appender.NOTESLOGGER.File=@@FILENAMENOTES@@\n"
 	private String sLog4jFileTemp=null;
-	//private String sLog4jLevel=null;     //Der Wert für @@LEVEL@@ in: "log4j.rootLogger=@@LEVEL@@, ROLL, NOTESLOGGER\n"
-	//private String sLog4jDBApplicationLog=null; // für log4j.appender.NOTESLOGGER.notesDb=@@DBApplicationLog@@\n"
-	//private String sLog4jServer=null; //                für log4j.appender.NOTESLOGGER.dominoServer=@@DBServer@@n"
-    private String sFlagReplication=null; //            für log4j.appender.NOTESLOGGER.flagReplication=@@FlagReplication@@
+	//private String sLog4jLevel=null;     //Der Wert fï¿½r @@LEVEL@@ in: "log4j.rootLogger=@@LEVEL@@, ROLL, NOTESLOGGER\n"
+	//private String sLog4jDBApplicationLog=null; // fï¿½r log4j.appender.NOTESLOGGER.notesDb=@@DBApplicationLog@@\n"
+	//private String sLog4jServer=null; //                fï¿½r log4j.appender.NOTESLOGGER.dominoServer=@@DBServer@@n"
+    private String sFlagReplication=null; //            fï¿½r log4j.appender.NOTESLOGGER.flagReplication=@@FlagReplication@@
 	
 	public NotesReportContextProviderZZZ(NotesContextProviderZZZ objContextNotes, KernelNotesZZZ objKernelNotes) throws ExceptionZZZ {
 		
@@ -39,10 +39,10 @@ public class NotesReportContextProviderZZZ extends KernelReportContextProviderZZ
 //	################################		
 	
 	
-	// FGL Erweiterung: Parmeter aus der ini Auslesen. Merke: Dies sind Parmeter, die zusätzlich zum NotesContextProviderZZZ definiert wurden
+	// FGL Erweiterung: Parmeter aus der ini Auslesen. Merke: Dies sind Parmeter, die zusï¿½tzlich zum NotesContextProviderZZZ definiert wurden
 //	##################### GETTER /SETTER
 
-		/** Der Dateipfad für die log4jProtokolle, die dann später gesammelt in ein NotesDokument geschrieben werden sollen. Wird als Parameter aud der Ini-Datei ausgelesen
+		/** Der Dateipfad fï¿½r die log4jProtokolle, die dann spï¿½ter gesammelt in ein NotesDokument geschrieben werden sollen. Wird als Parameter aud der Ini-Datei ausgelesen
 		* @return String
 		* lindhaueradmin; 03.11.2006 08:24:14
 		 * @throws ExceptionZZZ 
@@ -54,7 +54,7 @@ public class NotesReportContextProviderZZZ extends KernelReportContextProviderZZ
 			return this.sLog4jPathTemp;
 		}
 		
-		public static String readLog4jPathTemp(KernelZZZ objKernel, String sModuleCalling, String sClassCalling) throws ExceptionZZZ{
+		public static String readLog4jPathTemp(IKernelZZZ objKernel, String sModuleCalling, String sClassCalling) throws ExceptionZZZ{
 			if(StringZZZ.isEmpty(sModuleCalling)){
 				ExceptionZZZ ez = new ExceptionZZZ("sModuleCalling", iERROR_PARAMETER_MISSING, "NotesReportContextProviderZZZ", ReflectCodeZZZ.getMethodCurrentName());
 				throw ez;
@@ -66,7 +66,7 @@ public class NotesReportContextProviderZZZ extends KernelReportContextProviderZZ
 			return objKernel.getParameterByProgramAlias(sModuleCalling, sClassCalling, "Log4jPathTemp");
 		}
 		
-		/**Der Dateiname für die log4jProtokolle, die dann später gesammelt in ein NotesDokument geschrieben werden sollen. Wird als Parameter aud der Ini-Datei ausgelesen
+		/**Der Dateiname fÃ¼r die log4jProtokolle, die dann spÃ¤ter gesammelt in ein NotesDokument geschrieben werden sollen. Wird als Parameter aud der Ini-Datei ausgelesen
 		* @return String
 		* @throws ExceptionZZZ 
 		* 
@@ -79,7 +79,7 @@ public class NotesReportContextProviderZZZ extends KernelReportContextProviderZZ
 			return this.sLog4jFileTemp;
 		}
 		
-		public static String readLog4jFileTemp(KernelZZZ objKernel, String sModuleCalling, String sClassCalling) throws ExceptionZZZ{
+		public static String readLog4jFileTemp(IKernelZZZ objKernel, String sModuleCalling, String sClassCalling) throws ExceptionZZZ{
 			if(StringZZZ.isEmpty(sModuleCalling)){
 				ExceptionZZZ ez = new ExceptionZZZ("sModuleCalling", iERROR_PARAMETER_MISSING, "NotesReportContextProviderZZZ", ReflectCodeZZZ.getMethodCurrentName());
 				throw ez;
@@ -99,7 +99,7 @@ public class NotesReportContextProviderZZZ extends KernelReportContextProviderZZ
 			return this.sFlagReplication;
 		}
 		
-		public static String readFlagReplicationString(KernelZZZ objKernel, String sModuleCalling, String sClassCalling) throws ExceptionZZZ{
+		public static String readFlagReplicationString(IKernelZZZ objKernel, String sModuleCalling, String sClassCalling) throws ExceptionZZZ{
 			if(StringZZZ.isEmpty(sModuleCalling)){
 				ExceptionZZZ ez = new ExceptionZZZ("sModuleCalling", iERROR_PARAMETER_MISSING, "NotesReportContextProviderZZZ", ReflectCodeZZZ.getMethodCurrentName());
 				throw ez;
