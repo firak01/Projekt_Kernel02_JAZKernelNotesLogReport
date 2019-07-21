@@ -63,7 +63,7 @@ public class NotesReportContextProviderZZZ extends KernelReportContextProviderZZ
 				ExceptionZZZ ez = new ExceptionZZZ("sClassCalling", iERROR_PARAMETER_MISSING, "NotesReportContextProviderZZZ", ReflectCodeZZZ.getMethodCurrentName());
 				throw ez;
 			}
-			return objKernel.getParameterByProgramAlias(sModuleCalling, sClassCalling, "Log4jPathTemp");
+			return objKernel.getParameterByProgramAlias(sModuleCalling, sClassCalling, "Log4jPathTemp").getValue();
 		}
 		
 		/**Der Dateiname für die log4jProtokolle, die dann später gesammelt in ein NotesDokument geschrieben werden sollen. Wird als Parameter aud der Ini-Datei ausgelesen
@@ -88,7 +88,7 @@ public class NotesReportContextProviderZZZ extends KernelReportContextProviderZZ
 				ExceptionZZZ ez = new ExceptionZZZ("sClassCalling", iERROR_PARAMETER_MISSING, "NotesReportContextProviderZZZ", ReflectCodeZZZ.getMethodCurrentName());
 				throw ez;
 			}
-			return objKernel.getParameterByProgramAlias(sModuleCalling, sClassCalling, "Log4jFileTemp");
+			return objKernel.getParameterByProgramAlias(sModuleCalling, sClassCalling, "Log4jFileTemp").getValue();
 		}
 		
 		
@@ -108,7 +108,7 @@ public class NotesReportContextProviderZZZ extends KernelReportContextProviderZZ
 				ExceptionZZZ ez = new ExceptionZZZ("sClassCalling", iERROR_PARAMETER_MISSING, "NotesReportContextProviderZZZ", ReflectCodeZZZ.getMethodCurrentName());
 				throw ez;
 			}
-			return objKernel.getParameterByProgramAlias(sModuleCalling, sClassCalling, "FlagReplication");
+			return objKernel.getParameterByProgramAlias(sModuleCalling, sClassCalling, "FlagReplication").getValue();
 		}
 		
 		
